@@ -10,10 +10,10 @@
       <div v-if="modal.isAnimated" class="modal__overlay" ref="overlay" />
     </transition>
 
-    <transition name="modal-content" @after-leave="messagesStore.closeModal">
+    <transition name="modal-content" @after-leave="closeModal">
       <div v-if="modal.isAnimated" class="modal__content" ref="content">
         <button
-          @click="messagesStore.finishModalAnimation()"
+          @click="finishModalAnimation()"
           class="modal__close"
           type="button"
         >
@@ -25,7 +25,7 @@
           class="modal__component"
           :is="modalComponents[modal.componentName]"
           :modalData="modal.modalData"
-          @closeModal="messagesStore.finishModalAnimation()"
+          @closeModal="finishModalAnimation()"
         />
       </div>
     </transition>
@@ -35,11 +35,9 @@
 <script setup>
 import { ref } from 'vue'
 import Icon from '@/components/common/Icon.vue'
-import { useMessagesStore } from '@/store/messages'
-import { storeToRefs } from 'pinia'
+import { useMessages } from '@/composables/useMessages'
 
-const messagesStore = useMessagesStore()
-const { modal } = storeToRefs(messagesStore)
+const { modal, finishModalAnimation, closeModal } = useMessages()
 
 const modalComponents = {}
 
