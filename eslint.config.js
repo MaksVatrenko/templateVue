@@ -33,9 +33,9 @@ export default defineConfig([
 
   {
     rules: {
-      'no-console': 'off',
-      'no-debugger': 'off',
-      'no-undef': 'off',
+      'no-console': 'warn',
+      'no-debugger': 'warn',
+      'no-undef': 'warn',
       'no-unused-vars': ['warn'],
       'prefer-promise-reject-errors': 'off',
       'no-trailing-spaces': 'error',

@@ -5,7 +5,7 @@
     @click="toggle"
   >
     <div class="toggle-switch__text">OFF</div>
-    <div class="toggle-switch__slider" />
+    <div class="toggle-switch__slider" ></div>
     <div
       class="toggle-switch__text"
       :class="{ 'toggle-switch__text--active': props.autoMod }"

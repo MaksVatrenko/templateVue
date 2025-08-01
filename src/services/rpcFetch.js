@@ -1,7 +1,7 @@
-import fetchClient from '@/composables/useFetchClient'
-import { BASE_URL } from '@/configs/global.js'
-
-const RPC_BASE_URL = BASE_URL + '/call/client'
+// import fetchClient from '@/composables/useFetchClient'
+// import { BASE_URL } from '@/configs/global.js'
+//
+// const RPC_BASE_URL = BASE_URL + '/call/client'
 
 // ========== User ==========
 

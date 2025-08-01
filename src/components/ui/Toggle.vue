@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div ref="header" @click="toggle" class="header">
-      <slot name="toggle-header" />
+      <slot name="toggle-header" ></slot>
     </div>
 
     <transition name="toggle" @enter="enter" @leave="leave">
@@ -11,14 +11,14 @@
         :class="{ 'absolute-overlay': overlay }"
         :style="contentStyle"
       >
-        <slot name="toggle-content" />
+        <slot name="toggle-content" ></slot>
       </div>
     </transition>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch, computed, nextTick, CSSProperties } from 'vue'
+import { ref, onMounted, watch, computed, nextTick } from 'vue'
 import { gsap } from 'gsap'
 
 const props = defineProps({
@@ -35,8 +35,8 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const isOpen = ref(props.modelValue)
-const header = ref<HTMLElement | null>(null)
-const content = ref<HTMLElement | null>(null)
+const header = ref(null)
+const content = ref(null)
 const headerHeight = ref(0)
 
 const toggle = () => {
@@ -77,13 +77,13 @@ watch(
     isOpen.value = newValue
     if (newValue && header.value) {
       nextTick(() => {
-        headerHeight.value = header.value!.offsetHeight
+        headerHeight.value = header.value.offsetHeight
       })
     }
   }
 )
 
-const contentStyle = computed<CSSProperties>(() => ({
+const contentStyle = computed(() => ({
   // top: props.overlay ? `${headerHeight.value / 2}px` : 'auto',
   top: '0',
   position: props.overlay ? 'absolute' : 'relative'

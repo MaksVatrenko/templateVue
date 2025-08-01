@@ -7,7 +7,7 @@
     ref="modalWrapper"
   >
     <transition name="modal-fade">
-      <div v-if="modal.isAnimated" class="modal__overlay" ref="overlay" />
+      <div v-if="modal.isAnimated" class="modal__overlay" ref="overlay" ></div>
     </transition>
 
     <transition name="modal-content" @after-leave="messagesStore.closeModal">

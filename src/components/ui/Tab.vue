@@ -27,11 +27,11 @@
         />
       </div>
 
-      <div class="tab__decorator" :class="`tab__decorator--${currentTab}`" />
+      <div class="tab__decorator" :class="`tab__decorator--${currentTab}`" ></div>
     </div>
 
     <div class="tab__content">
-      <slot :currentItem="currentTab" />
+      <slot :currentItem="currentTab" ></slot>
     </div>
   </div>
 </template>

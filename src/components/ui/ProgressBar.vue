@@ -4,7 +4,7 @@
       class="progressbar__line"
       :style="`width: ${props.percent}%`"
       :class="`progressbar__line--${props.lineColor}`"
-    />
+    ></span>
   </div>
 </template>
 

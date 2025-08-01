@@ -1,5 +1,5 @@
-function statusErrorHandler(error) {
-  console.error(error)
+function statusErrorHandler() {
+
 }
 
 function getFetchOptions({ method, headers, body }) {
@@ -38,7 +38,7 @@ async function useFetchClient({
     const result = await response.json()
 
     if (result.err) {
-      console.error(result.err.message)
+      throw new Error(result.err.message)
     }
 
     return result

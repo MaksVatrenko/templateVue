@@ -20,11 +20,11 @@ import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import LayoutResize from '@/components/layout/Resize.vue'
 import ModalWrapper from '@/components/layout/Modal.vue'
-import { useRoute } from 'vue-router'
+
 import { useGlobalStore } from '@/store/global'
 
 const globalStore = useGlobalStore()
-const route = useRoute()
+
 </script>
 
 <style scoped lang="scss"></style>

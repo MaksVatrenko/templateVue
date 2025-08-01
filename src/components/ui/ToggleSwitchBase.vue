@@ -13,7 +13,7 @@
 import Icon from '@/components/common/Icon.vue'
 
 const emit = defineEmits(['onClick'])
-const [model, modifiers] = defineModel({
+const [model] = defineModel({
   set(value) {
     emit('onClick', value)
   }
