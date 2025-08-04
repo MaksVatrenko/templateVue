@@ -1,22 +1,85 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt4-starter-template",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=18.19.0"
+  },
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "./node_modules/.bin/nuxt dev",
+    "build": "./node_modules/.bin/nuxt build",
+    "generate": "./node_modules/.bin/nuxt generate",
+    "preview": "./node_modules/.bin/nuxt preview",
+    "postinstall": "./node_modules/.bin/nuxt prepare",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint . --fix",
+    "typecheck": "./node_modules/.bin/nuxt typecheck",
+    "clean": "./node_modules/.bin/nuxt cleanup && rm -rf node_modules .nuxt .output",
+    "format": "./node_modules/.bin/prettier --write .",
+    "test": "./node_modules/.bin/vitest",
+    "test:e2e": "./node_modules/.bin/cypress open",
+    "prepare": "./node_modules/.bin/husky && ./node_modules/.bin/husky install"
   },
   "dependencies": {
-    "@nuxt/eslint": "1.7.1",
-    "@nuxt/fonts": "0.11.4",
-    "@nuxt/icon": "1.15.0",
-    "@nuxt/image": "1.11.0",
-    "eslint": "^9.32.0",
-    "nuxt": "^4.0.1",
-    "vue": "^3.5.18",
-    "vue-router": "^4.5.1"
+    "@nuxt/fonts": "^0.5.1",
+    "@nuxt/icon": "^1.10.3",
+    "@vueuse/nuxt": "^12.5.0",
+    "radix-vue": "^1.3.2",
+    "nuxt": "^3.15.4",
+    "vue-i18n": "9",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@nuxt/cli": "^3.15.4",
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "1.0.0",
+    "@nuxt/image": "1.0.0",
+    "@nuxt/schema": "^3.15.4",
+    "@nuxt/test-utils": "latest",
+    "@nuxt/types": "^2.18.1",
+    "@nuxtjs/html-validator": "^1.8.2",
+    "@nuxtjs/robots": "^5.2.2",
+    "@nuxtjs/sitemap": "^7.2.4",
+    "@nuxtjs/tailwindcss": "^6.11.3",
+    "@types/node": "^22.13.1",
+    "@vue/test-utils": "^2.4.4",
+    "autoprefixer": "^10.4.17",
+    "compression-webpack-plugin": "^11.1.0",
+    "cypress": "^13.6.4",
+    "cssnano": "^6.0.5",
+    "cssnano-preset-default": "^6.0.5",
+    "eslint": "latest",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.1",
+    "nuxt-security": "^2.1.5",
+    "postcss": "^8.4.31",
+    "postcss-html": "^1.8.0",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "strip-ansi": "6.0.1",
+    "stylelint": "^16.14.1",
+    "stylelint-config-recommended-vue": "^1.6.0",
+    "stylelint-config-standard": "^37.0.0",
+    "tailwind-variants": "^0.3.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vitest": "latest",
+    "vue-tsc": "^2.2.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,vue}": [
+      "stylelint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

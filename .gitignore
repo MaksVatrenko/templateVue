@@ -22,34 +22,3 @@ logs
 .env
 .env.*
 !.env.example
-
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-dist-ssr
-coverage
-*.local
-
-/cypress/videos/
-/cypress/screenshots/
-
-# Editor directories and files
-.vscode
-!.vscode/extensions.json
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-.editorconfig
-
-*.tsbuildinfo
-local_scripts/
-conf.js
-confDebug.js
-pnpm-lock.yaml
